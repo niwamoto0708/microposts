@@ -20,6 +20,7 @@
             <%= f.label :HomePage %>
             <%= f.url_field :HomePage, class: 'form-control' %>
             <%= f.label :birth %>
+            <div class="form-inline">
             <%= f.date_select(:birth,
                                 use_short_month: true,
                                 start_year:     1960,
@@ -27,6 +28,7 @@
                                 default:        Date.new(1972, 1, 1),
                                 date_separator: '/') %>
             <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+            </div>
         <% end %>
       </div>
     </div>
