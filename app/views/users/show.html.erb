@@ -3,6 +3,23 @@
     <%= @user.name %>
 </h1>
 <h2><%= @user.name %>のプロフィール</h2>
-<ul>
-    <li>Profile: <%= @user.profile %></li>
-</ul>
+<table border="1">
+    <thead>
+        <tr>
+            <th>ユーザ名</th>
+            <th>プロフィール</th>
+            <th>出身地</th>
+            <th>ホームページ</th>
+            <th>誕生日</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th><%= @user.name %></th>
+            <td><%= @user.profile %></td>
+            <td><%= @user.area %></td>
+            <td><%= @user.HomePage %></td>
+            <td><%= @user.birth %></td>
+        </tr>
+    </tbody>
+</table>
