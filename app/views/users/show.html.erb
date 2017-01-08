@@ -19,7 +19,7 @@
             <td><%= @user.profile %></td>
             <td><%= @user.area %></td>
             <td><%= @user.HomePage %></td>
-            <td><%= @user.birth %></td>
+            <td><%= @user.birth.strftime("%Y/%m/%d") %></td>
         </tr>
     </tbody>
 </table>
