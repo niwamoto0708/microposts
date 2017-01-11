@@ -10,7 +10,6 @@ class User < ActiveRecord::Base
     validates :HomePage, allow_blank: true, length: { maximum: 100 }
     validates :birth, presence: true, allow_nil: true
     has_secure_password
-<<<<<<< HEAD
     has_many :microposts
     has_many :following_relationships, class_name:  "Relationship",
                                      foreign_key: "follower_id",
@@ -36,7 +35,5 @@ class User < ActiveRecord::Base
   def following?(other_user)
     following_users.include?(other_user)
   end
-=======
     validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
->>>>>>> user-profile
 end
