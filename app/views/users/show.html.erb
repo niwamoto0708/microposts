@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="row">
     <aside class="col-md-4">
         <section class="user_info">
@@ -23,3 +24,30 @@
         <% end %>
     </div>
 </div>
+=======
+<h1>
+    <%= gravatar_for @user %>
+    <%= @user.name %>
+</h1>
+<h2><%= @user.name %>のプロフィール</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>ユーザ名</th>
+            <th>プロフィール</th>
+            <th>出身地</th>
+            <th>ホームページ</th>
+            <th>誕生日</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th><%= @user.name %></th>
+            <td><%= @user.profile %></td>
+            <td><%= @user.area %></td>
+            <td><%= @user.HomePage %></td>
+            <td><%= @user.birth.strftime("%Y/%m/%d") if @user.birth %></td>
+        </tr>
+    </tbody>
+</table>
+>>>>>>> user-profile
