@@ -36,4 +36,8 @@ class User < ActiveRecord::Base
     following_users.include?(other_user)
   end
     validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+    
+  def feed_items
+    Micropost.where(user_id: following_user_ids + [self.id])
+  end
 end
