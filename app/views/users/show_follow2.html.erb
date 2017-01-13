@@ -1,0 +1,10 @@
+<h1>フォローされているユーザリスト(<%= @user.follower_relationships.count %>人)</h1>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+          <ul class="users">
+              <% @users.each do |user| %>
+              <% end %>
+              <%= render @users %>
+          </ul>
+      </div>
+    </div>
