@@ -6,11 +6,10 @@
     </span>
     <span class="content">
         <%= micropost.content %>
-        <% if micropost.retweets_microposts_id.blank? %>
+        <% if micropost.retweets_microposts_id == nil %>
         [Original Tweet]
         <% else %> 
-        [Retweeted_by]<%= micropost.retweet_micropost.user.name %>:
-        <%= User.find(Micropost.find(micropost.retweets_microposts_id).user_id).name %>
+        [Retweeted_by]  <%= micropost.retweet_micropost.user.name %>
         <% end %>
     </span>
     <span class="timestamp">
