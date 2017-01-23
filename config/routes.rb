@@ -12,6 +12,13 @@ Rails.application.routes.draw do
       get :followings, :followers
     end
   end
-  resources :microposts
+  
+  resources :microposts do
+    member do
+      post 'retweet'
+    end
+  end
+  
+  # /microposts/:id/retweet
   resources :relationships, only: [:create, :destroy]
 end

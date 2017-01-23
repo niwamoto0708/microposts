@@ -5,7 +5,13 @@
         <%= link_to micropost.user.name, micropost.user %>
     </span>
     <span class="content">
-        <%= micropost.content %>    
+        <%= micropost.content %>
+        <% if micropost.retweets_microposts_id.blank? %>
+        [Original Tweet]
+        <% else %> 
+        [Retweeted_by]<%= micropost.retweet_micropost.user.name %>:
+        <%= User.find(Micropost.find(micropost.retweets_microposts_id).user_id).name %>
+        <% end %>
     </span>
     <span class="timestamp">
         Posted
@@ -13,6 +19,8 @@
         ago.
         <% if current_user == micropost.user %>
         <%= link_to "delete", micropost, method: :delete, data: { confirm: "You sure?" } %>
+        <% else %>
+        <%= link_to 'retweet', retweet_micropost_path(micropost), method: :post %>
         <% end %>
     </span>
 </li>
